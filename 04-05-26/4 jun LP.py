@@ -77,6 +77,45 @@ c=Circle(11)
 
 print("Rectangle Area:",r.area())
 print("Circle Area:",c.area())
+
+# MLModel Abstract Class
+
+from abc import ABC,abstractmethod
+
+class MLModel(ABC):
+
+    @abstractmethod
+    def train(self):
+        pass
+    @abstractmethod
+    def predict(self):
+        pass
+
+# Linear Regression Model
+
+class LinearRegressionModel(MLModel):
+    def train(self):
+        print("Training Linear Regression Model")
+
+    def predict(self):
+        print("Predicting Using Linear Regression")
+
+class DecisionTreeModel(MLModel):
+    def train(self):
+        print("Training Decision Tree Model")
+
+    def predict(self):
+        print("Pridicting Using Decision Tree Model")
+
+l=LinearRegressionModel()
+d=DecisionTreeModel()
+
+l.train()
+l.predict()
+
+d.train()
+d.predict()
+    
     
 
 
