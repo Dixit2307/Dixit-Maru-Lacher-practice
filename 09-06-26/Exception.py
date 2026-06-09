@@ -9,7 +9,7 @@
 # Syntax
 
 # assert Condition ,"Error amessage"
-
+'''
 num=10
 assert num > 0,"Number Must be Positive"
 
@@ -51,19 +51,39 @@ except ValueError:
 
 except Exception as e:
     print("Error:",e)
-
+'''
 # Student Grade Validation
 
 class InvalidGradeValidation(Exception):
     pass
 
 try:
-    grade=input("Enter Grade:")
+    grade=int(input("Enter Grade:"))
 
     assert grade !="","Grade input Cannot"
 
-    if grade < 0 or grade > 100:
-        rais ValueError("")
+    if grade < 0 or grade >100:
+        raise ValueError("Grade Must Be Between 0 to 100")
+
+    if grade < 40:
+        raise InvalidGradeError("Student has Failed")
+    print("Student Passed")
+
+except AssertionError as e:
+    print("Assertion Error",e)
+
+except ValueError as e:
+    print("Value error:",e)
+
+except InvalidGradeError as e:
+    print("Invalide Grade Error")
+
+
+
+
+
+
+    
 
 
 
